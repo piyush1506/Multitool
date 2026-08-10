@@ -51,7 +51,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="text-center max-w-3xl mx-auto mb-20">
         <h1 className="text-5xl md:text-6xl font-extrabold tracking-tight mb-6 text-transparent bg-clip-text bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400">
-          The Ultimate Toolkit for Images and PDFs
+          pkctechs - The Ultimate Toolkit for Images and PDFs
         </h1>
         <p className="text-xl text-slate-400 leading-relaxed mb-8">
           Free, fast, and secure tools to manipulate your media files directly in the browser. 

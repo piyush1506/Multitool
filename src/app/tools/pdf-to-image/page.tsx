@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import PdfToImageClient from "@/components/tools/PdfToImageClient";
 
 export const metadata: Metadata = {
-  title: "PDF to Image Converter | MultiTool Pro",
+  title: "PDF to Image Converter | pkctechs",
   description: "Extract high-quality images from PDF pages securely in your browser. Convert PDF to JPG or PNG instantly.",
 };
 

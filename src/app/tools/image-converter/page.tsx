@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ImageConverterClient from "@/components/tools/ImageConverterClient";
 
 export const metadata: Metadata = {
-  title: "Image Converter | MultiTool Pro",
+  title: "Image Converter | pkctechs",
   description: "Convert images to PNG, JPEG, WEBP, and GIF instantly in your browser without any quality loss.",
 };
 

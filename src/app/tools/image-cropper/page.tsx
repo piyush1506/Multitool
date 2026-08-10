@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ImageCropperClient from "@/components/tools/ImageCropperClient";
 
 export const metadata: Metadata = {
-  title: "Image Cropper | MultiTool Pro",
+  title: "Image Cropper | pkctechs",
   description: "Crop images online easily with a visual editor. Frame and cut your pictures perfectly.",
 };
 

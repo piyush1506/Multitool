@@ -9,7 +9,7 @@ export function Navbar() {
           <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 shadow-lg shadow-purple-500/20">
             <Wrench className="h-5 w-5 text-white" />
           </div>
-          <span className="text-xl font-bold tracking-tight text-white">MultiTool<span className="text-purple-400">Pro</span></span>
+          <span className="text-xl font-bold tracking-tight text-white">pkc<span className="text-purple-400">techs</span></span>
         </Link>
         <div className="flex items-center gap-6">
           <Link href="/tools/image-resizer" className="text-sm font-medium text-gray-300 transition-colors hover:text-white">Resizer</Link>

@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import ImageResizerClient from "@/components/tools/ImageResizerClient";
 
 export const metadata: Metadata = {
-  title: "Image Resizer | MultiTool Pro",
+  title: "Image Resizer | pkctechs",
   description: "Resize images to exact dimensions while maintaining aspect ratio and quality. Free online image resizer.",
 };
 
