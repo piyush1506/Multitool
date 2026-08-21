@@ -39,6 +39,9 @@ export const metadata: Metadata = {
   authors: [{ name: "pkctechs" }],
   creator: "pkctechs",
   publisher: "pkctechs",
+  verification: {
+    google: "mF3bRg2ewXSGnBiqMMBZjf97H-fcksdcT2H-4Htuj5Y",
+  },
   formatDetection: {
     email: false,
     address: false,
