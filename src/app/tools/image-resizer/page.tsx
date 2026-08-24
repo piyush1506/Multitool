@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Image Resizer | Resize Images Online For Free",
   description: "Resize image dimensions easily with exact pixel or percentage scaling.",
   keywords: "image, resizer, free online tool, pkctechs",
+  applicationName: "Image Resizer",
+  openGraph: {
+    siteName: "Image Resizer",
+  }
 };
 
 export default function ImageResizerPage() {

@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Image to PDF | Convert JPG, PNG to PDF Online",
   description: "Convert images to PDF documents instantly. Fast and secure online image to PDF converter.",
   keywords: "image, pdf, converter, free online tool, pkctechs",
+  applicationName: "Image to PDF",
+  openGraph: {
+    siteName: "Image to PDF",
+  }
 };
 
 export default function ImageToPdfPage() {

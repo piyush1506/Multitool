@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Password & Token Generator | Secure Random Password Tool",
   description: "Generate cryptographically secure passwords and random API tokens online.",
   keywords: "password, generator, token, secure, free online tool, pkctechs",
+  applicationName: "Password & Token Generator",
+  openGraph: {
+    siteName: "Password & Token Generator",
+  }
 };
 
 export default function PasswordGeneratorPage() {

@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "PDF to Image | Convert PDF Pages to Images",
   description: "Convert PDF pages to high-resolution images instantly.",
   keywords: "pdf, image, converter, free online tool, pkctechs",
+  applicationName: "PDF to Image",
+  openGraph: {
+    siteName: "PDF to Image",
+  }
 };
 
 export default function PdfToImagePage() {

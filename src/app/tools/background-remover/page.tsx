@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Free Background Remover Online",
     description: "Remove solid or color backgrounds from photos and graphics instantly.",
     url: "https://pkctechs.in/tools/background-remover",
-    siteName: "pkctechs",
+    siteName: "Background Remover Online",
     type: "website",
   },
   twitter: {

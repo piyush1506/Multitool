@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "SVG to PNG Converter | Convert SVG to High-Res PNG",
   description: "Convert SVG code or graphics into high-resolution PNG images online free.",
   keywords: "svg, png, converter, free online tool, pkctechs",
+  applicationName: "SVG to PNG Converter",
+  openGraph: {
+    siteName: "SVG to PNG Converter",
+  }
 };
 
 export default function SvgToPngPage() {

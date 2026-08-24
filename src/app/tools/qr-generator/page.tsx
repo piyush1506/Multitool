@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Free Custom QR Code Generator",
     description: "Generate customizable QR codes for web links, text, and contact information.",
     url: "https://pkctechs.in/tools/qr-generator",
-    siteName: "pkctechs",
+    siteName: "QR Code Generator Online",
     type: "website",
   },
   twitter: {

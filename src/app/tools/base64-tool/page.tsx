@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Base64 Encoder & Decoder | Convert Text to Base64 Online",
   description: "Encode or decode strings to Base64 format instantly.",
   keywords: "base64, encode, decode, free online tool, pkctechs",
+  applicationName: "Base64 Encoder & Decoder",
+  openGraph: {
+    siteName: "Base64 Encoder & Decoder",
+  }
 };
 
 export default function Base64Page() {

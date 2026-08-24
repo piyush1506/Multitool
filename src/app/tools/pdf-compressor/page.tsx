@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "PDF Compressor | Reduce PDF File Size Online Free",
   description: "Compress PDF files online securely. Reduce PDF file size without losing document structure.",
   keywords: "pdf, compressor, reduce size, free online tool, pkctechs",
+  applicationName: "PDF Compressor",
+  openGraph: {
+    siteName: "PDF Compressor",
+  }
 };
 
 export default function PdfCompressorPage() {

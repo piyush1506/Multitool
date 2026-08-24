@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Image Compressor | Reduce Image File Size Online Free",
   description: "Compress JPEG, PNG, and WEBP images online. Reduce image file size by up to 90% without visible quality loss. Free, fast, and secure.",
   keywords: "image, compressor, free online tool, pkctechs",
+  applicationName: "Image Compressor",
+  openGraph: {
+    siteName: "Image Compressor",
+  }
 };
 
 export default function ImageCompressorPage() {

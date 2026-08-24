@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Color Picker & Palette Generator | HEX, RGB, HSL Converter",
   description: "Pick colors, convert formats between HEX, RGB, HSL instantly online.",
   keywords: "color, picker, hex, rgb, hsl, free online tool, pkctechs",
+  applicationName: "Color Picker & Palette Generator",
+  openGraph: {
+    siteName: "Color Picker & Palette Generator",
+  }
 };
 
 export default function ColorPickerPage() {

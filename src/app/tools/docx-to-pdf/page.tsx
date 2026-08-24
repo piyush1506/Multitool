@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Free DOCX to PDF Converter Online",
     description: "Convert Word (.docx) documents into portable PDF files instantly in your browser.",
     url: "https://pkctechs.in/tools/docx-to-pdf",
-    siteName: "pkctechs",
+    siteName: "DOCX to PDF Converter",
     type: "website",
   },
   twitter: {

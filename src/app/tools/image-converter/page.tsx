@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Image Converter | Convert PNG, JPG, WEBP Online",
   description: "Convert images between formats like PNG, JPEG, WEBP instantly. Fast and secure online image converter.",
   keywords: "image, converter, free online tool, pkctechs",
+  applicationName: "Image Converter",
+  openGraph: {
+    siteName: "Image Converter",
+  }
 };
 
 export default function ImageConverterPage() {

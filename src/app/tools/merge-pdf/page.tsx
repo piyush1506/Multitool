@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Merge PDF | Combine PDF Files Online Free",
   description: "Merge multiple PDF documents into a single file easily. Free online PDF merger.",
   keywords: "pdf, merge, combine, free online tool, pkctechs",
+  applicationName: "Merge PDF",
+  openGraph: {
+    siteName: "Merge PDF",
+  }
 };
 
 export default function MergePdfPage() {

@@ -12,7 +12,7 @@ export const metadata: Metadata = {
     title: "Free Data Format Converter (JSON, CSV, XML)",
     description: "Convert structured data between JSON, CSV, and XML formats instantly in your browser.",
     url: "https://pkctechs.in/tools/format-converter",
-    siteName: "pkctechs",
+    siteName: "Data Format Converter",
     type: "website",
   },
   twitter: {

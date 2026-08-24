@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "Image Cropper | Crop Images Online For Free",
   description: "Crop and adjust your images with an easy-to-use visual editor. Perfect for social media formatting.",
   keywords: "image, cropper, free online tool, pkctechs",
+  applicationName: "Image Cropper",
+  openGraph: {
+    siteName: "Image Cropper",
+  }
 };
 
 export default function ImageCropperPage() {

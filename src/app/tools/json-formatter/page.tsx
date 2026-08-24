@@ -5,6 +5,10 @@ export const metadata: Metadata = {
   title: "JSON Formatter & Validator | Beautify and Minify JSON",
   description: "Format, validate, beautify, and minify JSON data online free.",
   keywords: "json, formatter, validator, beautifier, minify, free online tool, pkctechs",
+  applicationName: "JSON Formatter & Validator",
+  openGraph: {
+    siteName: "JSON Formatter & Validator",
+  }
 };
 
 export default function JsonFormatterPage() {
