@@ -49,7 +49,7 @@ export default function PdfCompressorClient() {
   const handleDownload = () => {
     if (!compressedPdfBytes || !file) return;
 
-    const blob = new Blob([compressedPdfBytes], { type: "application/pdf" });
+    const blob = new Blob([compressedPdfBytes as any], { type: "application/pdf" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
