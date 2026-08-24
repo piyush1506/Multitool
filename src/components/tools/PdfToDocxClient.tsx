@@ -4,10 +4,7 @@ import React, { useState, useCallback } from "react";
 import { useDropzone } from "react-dropzone";
 import { Document, Paragraph, TextRun, Packer } from "docx";
 import { UploadCloud, Download, FileText, RefreshCw, FileOutput } from "lucide-react";
-import * as pdfjsLib from "pdfjs-dist";
 
-// Set PDF.js worker
-pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
 
 export default function PdfToDocxClient() {
   const [file, setFile] = useState<File | null>(null);
@@ -33,6 +30,9 @@ export default function PdfToDocxClient() {
 
     setIsConverting(true);
     try {
+      const pdfjsLib = await import("pdfjs-dist");
+      pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.mjs`;
+
       const arrayBuffer = await file.arrayBuffer();
       const loadingTask = pdfjsLib.getDocument({ data: arrayBuffer });
       const pdf = await loadingTask.promise;
