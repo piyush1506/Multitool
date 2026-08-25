@@ -3,8 +3,8 @@ import DocxToPdfClient from "@/components/tools/DocxToPdfClient";
 
 export const metadata: Metadata = {
   title: "DOCX to PDF Converter | Convert Word to PDF Online Free",
-  description: "Convert Word DOCX documents to PDF format online instantly. Free, fast, and 100% secure client-side conversion.",
-  keywords: ["docx to pdf", "convert word to pdf", "docx to pdf converter", "free word to pdf", "pkctechs"],
+  description: "Convert Word DOCX documents to PDF format online instantly. Free, fast, 100% secure & iLovePDF alternative.",
+  keywords: ["docx to pdf", "convert word to pdf", "word to pdf", "ilovepdf word to pdf", "ilovepdf", "ilovepdff", "i love pdf", "free word to pdf", "pkctechs"],
   alternates: {
     canonical: "https://pkctechs.in/tools/docx-to-pdf",
   },

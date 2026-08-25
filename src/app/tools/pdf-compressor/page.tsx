@@ -3,8 +3,8 @@ import PdfCompressorClient from "@/components/tools/PdfCompressorClient";
 
 export const metadata: Metadata = {
   title: "PDF Compressor | Reduce PDF File Size Online Free",
-  description: "Compress PDF files online securely. Reduce PDF file size without losing document structure.",
-  keywords: "pdf, compressor, reduce size, free online tool, pkctechs",
+  description: "Compress PDF files online securely. Reduce PDF file size without losing document quality & iLovePDF alternative.",
+  keywords: ["pdf compressor", "compress pdf", "reduce pdf size", "ilovepdf compress", "ilovepdf", "ilovepdff", "i love pdf compress", "free online pdf compressor", "pkctechs"],
   applicationName: "PDF Compressor",
   openGraph: {
     siteName: "PDF Compressor",

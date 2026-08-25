@@ -3,8 +3,8 @@ import PdfToImageClient from "@/components/tools/PdfToImageClient";
 
 export const metadata: Metadata = {
   title: "PDF to Image | Convert PDF Pages to Images",
-  description: "Convert PDF pages to high-resolution images instantly.",
-  keywords: "pdf, image, converter, free online tool, pkctechs",
+  description: "Convert PDF pages to high-resolution images instantly. Free online PDF to image converter & iLovePDF alternative.",
+  keywords: ["pdf to image", "pdf to jpg", "pdf to png", "ilovepdf pdf to jpg", "ilovepdf", "ilovepdff", "free pdf to image", "pkctechs"],
   applicationName: "PDF to Image",
   openGraph: {
     siteName: "PDF to Image",

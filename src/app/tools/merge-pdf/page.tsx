@@ -3,8 +3,8 @@ import MergePdfClient from "@/components/tools/MergePdfClient";
 
 export const metadata: Metadata = {
   title: "Merge PDF | Combine PDF Files Online Free",
-  description: "Merge multiple PDF documents into a single file easily. Free online PDF merger.",
-  keywords: "pdf, merge, combine, free online tool, pkctechs",
+  description: "Merge multiple PDF documents into a single file easily. Free online PDF merger & iLovePDF alternative.",
+  keywords: ["merge pdf", "combine pdf", "ilovepdf merge", "ilovepdf", "ilovepdff", "i love pdf merge", "free online pdf merger", "pkctechs"],
   applicationName: "Merge PDF",
   openGraph: {
     siteName: "Merge PDF",

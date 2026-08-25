@@ -3,8 +3,8 @@ import SplitPdfClient from "@/components/tools/SplitPdfClient";
 
 export const metadata: Metadata = {
   title: "Split PDF | Extract Pages from PDF Online Free",
-  description: "Extract specific pages or split a PDF into separate files easily.",
-  keywords: "pdf, split, extract, free online tool, pkctechs",
+  description: "Extract specific pages or split a PDF into separate files easily. Free online PDF splitter & iLovePDF alternative.",
+  keywords: ["split pdf", "extract pdf", "ilovepdf split", "ilovepdf", "ilovepdff", "i love pdf split", "free online pdf splitter", "pkctechs"],
   applicationName: "Split PDF",
   openGraph: {
     siteName: "Split PDF",

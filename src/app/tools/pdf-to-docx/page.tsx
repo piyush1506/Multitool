@@ -3,8 +3,8 @@ import PdfToDocxClient from "@/components/tools/PdfToDocxClient";
 
 export const metadata: Metadata = {
   title: "PDF to DOCX Converter | Convert PDF to Word Online Free",
-  description: "Convert PDF documents to editable Microsoft Word (.docx) files online for free. Fast, accurate, and 100% secure client-side conversion.",
-  keywords: ["pdf to docx", "convert pdf to word", "pdf to docx converter", "free pdf to word", "pkctechs"],
+  description: "Convert PDF documents to editable Microsoft Word (.docx) files online for free. Fast, accurate, 100% secure & iLovePDF alternative.",
+  keywords: ["pdf to docx", "convert pdf to word", "pdf to word", "ilovepdf pdf to word", "ilovepdf", "ilovepdff", "i love pdf", "free pdf to word", "pkctechs"],
   alternates: {
     canonical: "https://pkctechs.in/tools/pdf-to-docx",
   },
