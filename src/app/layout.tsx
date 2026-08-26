@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     default: "pkctechs - Free Online Image, PDF & Web Utility Tools",
     template: "%s | pkctechs Utilities",
   },
-  description: "Comprehensive suite of 19 free online utility tools & iLovePDF alternative: PDF to DOCX, DOCX to PDF, Image Compressor, Background Remover, QR Code Generator, Data Format Converter & more. 100% private, client-side browser execution.",
+  description: "Free online utility tools & iLovePDF alternative. Convert PDF to Word, compress images, remove backgrounds & generate QR codes. 100% private & browser-based.",
   keywords: [
     "ilovepdf",
     "ilovepdff",
@@ -108,17 +108,84 @@ export const metadata: Metadata = {
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "WebApplication",
-  "name": "pkctechs Multitool",
-  "url": "https://pkctechs.in",
-  "description": "Free, browser-based online utility suite featuring 19 image, PDF, document, and developer tools.",
-  "applicationCategory": "UtilityApplication",
-  "operatingSystem": "All",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
-  }
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://pkctechs.in/#website",
+      "url": "https://pkctechs.in",
+      "name": "pkctechs",
+      "description": "Free Online Image, PDF & Web Utility Tools",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://pkctechs.in/?q={search_term_string}"
+        },
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "WebApplication",
+      "name": "pkctechs Multitool",
+      "url": "https://pkctechs.in",
+      "description": "Free, browser-based online utility suite featuring 19 image, PDF, document, and developer tools.",
+      "applicationCategory": "UtilityApplication",
+      "operatingSystem": "All",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    },
+    {
+      "@type": "ItemList",
+      "name": "Popular Tools Navigation",
+      "itemListElement": [
+        {
+          "@type": "SiteNavigationElement",
+          "position": 1,
+          "name": "PDF to DOCX",
+          "url": "https://pkctechs.in/tools/pdf-to-docx"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 2,
+          "name": "DOCX to PDF",
+          "url": "https://pkctechs.in/tools/docx-to-pdf"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 3,
+          "name": "Split PDF",
+          "url": "https://pkctechs.in/tools/split-pdf"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 4,
+          "name": "Merge PDF",
+          "url": "https://pkctechs.in/tools/merge-pdf"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 5,
+          "name": "Image Compressor",
+          "url": "https://pkctechs.in/tools/image-compressor"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 6,
+          "name": "Background Remover",
+          "url": "https://pkctechs.in/tools/background-remover"
+        },
+        {
+          "@type": "SiteNavigationElement",
+          "position": 7,
+          "name": "QR Code Generator",
+          "url": "https://pkctechs.in/tools/qr-generator"
+        }
+      ]
+    }
+  ]
 };
 
 export default function RootLayout({

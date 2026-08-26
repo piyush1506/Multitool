@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { 
   Image as ImageIcon, 
@@ -202,6 +202,16 @@ export default function Home() {
   const [searchQuery, setSearchQuery] = useState("");
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const q = params.get("q");
+      if (q) {
+        setSearchQuery(q);
+      }
+    }
+  }, []);
+
   const filteredTools = tools.filter((tool) =>
     tool.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
     tool.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
@@ -211,6 +221,16 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center min-h-screen pt-8 pb-24 relative overflow-hidden transition-colors">
       
+      {/* Hero Title & Search Header */}
+      <div className="relative z-10 w-full max-w-6xl mx-auto px-6 mb-8 text-center">
+        <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mb-3 text-slate-900 dark:text-white">
+          Free Online Image, PDF & Web Utility Tools
+        </h1>
+        <p className="text-slate-600 dark:text-zinc-400 text-base md:text-lg max-w-2xl mx-auto font-normal">
+          Fast, 100% private browser-based utilities with zero file uploads or limits.
+        </p>
+      </div>
+
       {/* Search Console - Top Bar */}
       <div className="relative z-10 w-full max-w-6xl mx-auto px-6 mb-12">
         <div className="relative w-full max-w-2xl mx-auto group">
