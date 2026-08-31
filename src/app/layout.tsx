@@ -19,6 +19,14 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://pkctechs.in"),
   title: "pkctechs - Free Online Image, PDF & Web Utility Tools",
   description: "Free online utility tools & iLovePDF alternative. Convert PDF to Word, compress images, remove backgrounds & generate QR codes. 100% private & browser-based.",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/favicon.ico", sizes: "any" },
+    ],
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   keywords: [
     "ilovepdf",
     "ilovepdff",
