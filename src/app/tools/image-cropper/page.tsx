@@ -3,17 +3,73 @@ import ImageCropperClient from "@/components/tools/ImageCropperClient";
 
 export const metadata: Metadata = {
   title: "Image Cropper | Crop Images Online For Free",
-  description: "Crop and adjust your images with an easy-to-use visual editor. Perfect for social media formatting.",
-  keywords: "image, cropper, free online tool, pkctechs",
-  applicationName: "Image Cropper",
+  description: "Crop and frame your images online for free with an easy visual editor. Adjust aspect ratios for Instagram, Facebook, Twitter, and social media.",
+  keywords: ["image cropper","crop image online","crop photo","image crop tool","free photo cropper","iloveimg crop","pkctechs"],
+  alternates: {
+    canonical: "https://pkctechs.in/tools/image-cropper",
+  },
   openGraph: {
+    title: "Image Cropper | Crop Images Online For Free",
+    description: "Crop and frame your images online for free with an easy visual editor. Adjust aspect ratios for Instagram, Facebook, Twitter, and social media.",
+    url: "https://pkctechs.in/tools/image-cropper",
     siteName: "Image Cropper",
-  }
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Image Cropper | Crop Images Online For Free",
+    description: "Crop and frame your images online for free with an easy visual editor. Adjust aspect ratios for Instagram, Facebook, Twitter, and social media.",
+  },
 };
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Image Cropper",
+    "url": "https://pkctechs.in/tools/image-cropper",
+    "operatingSystem": "All",
+    "applicationCategory": "MultimediaApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Crop and frame your images online for free with an easy visual editor. Adjust aspect ratios for Instagram, Facebook, Twitter, and social media."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://pkctechs.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://pkctechs.in/#tools"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Image Cropper",
+        "item": "https://pkctechs.in/tools/image-cropper"
+      }
+    ]
+  }
+];
 
 export default function ImageCropperPage() {
   return (
     <div className="container mx-auto px-6 py-16 max-w-5xl relative z-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           Image Cropper

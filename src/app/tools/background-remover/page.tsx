@@ -3,38 +3,65 @@ import BackgroundRemoverClient from "@/components/tools/BackgroundRemoverClient"
 
 export const metadata: Metadata = {
   title: "Background Remover Online | Free Transparent PNG Maker",
-  description: "Remove background from images online instantly. Create transparent PNG backgrounds 100% free and private in your browser.",
-  keywords: ["background remover", "remove background from image", "transparent png maker", "free background eraser", "pkctechs"],
+  description: "Remove background from images online for free. AI background remover for photos, product images, and logos with 100% privacy.",
+  keywords: ["background remover","remove background","remove bg","transparent png maker","remove image background free","ilovepdf background remover","pkctechs"],
   alternates: {
     canonical: "https://pkctechs.in/tools/background-remover",
   },
   openGraph: {
-    title: "Free Background Remover Online",
-    description: "Remove solid or color backgrounds from photos and graphics instantly.",
+    title: "Background Remover Online | Free Transparent PNG Maker",
+    description: "Remove background from images online for free. AI background remover for photos, product images, and logos with 100% privacy.",
     url: "https://pkctechs.in/tools/background-remover",
-    siteName: "Background Remover Online",
+    siteName: "Background Remover",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Background Remover | pkctechs",
-    description: "Make image backgrounds transparent online for free.",
+    title: "Background Remover Online | Free Transparent PNG Maker",
+    description: "Remove background from images online for free. AI background remover for photos, product images, and logos with 100% privacy.",
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Background Remover Online",
-  "operatingSystem": "All",
-  "applicationCategory": "GraphicsApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Background Remover",
+    "url": "https://pkctechs.in/tools/background-remover",
+    "operatingSystem": "All",
+    "applicationCategory": "MultimediaApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Remove background from images online for free. AI background remover for photos, product images, and logos with 100% privacy."
   },
-  "description": "Remove background from images online instantly and export transparent PNGs."
-};
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://pkctechs.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://pkctechs.in/#tools"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Background Remover",
+        "item": "https://pkctechs.in/tools/background-remover"
+      }
+    ]
+  }
+];
 
 export default function BackgroundRemoverPage() {
   return (

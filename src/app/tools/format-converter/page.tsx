@@ -3,38 +3,65 @@ import FormatConverterClient from "@/components/tools/FormatConverterClient";
 
 export const metadata: Metadata = {
   title: "Data Format Converter | JSON, CSV & XML Converter Online",
-  description: "Convert data formats seamlessly between JSON, CSV, and XML online. Fast, browser-based data converter for developers.",
-  keywords: ["json to csv", "csv to json", "json to xml", "data format converter", "pkctechs"],
+  description: "Convert between JSON, CSV, and XML formats instantly. Free online developer utility for data transformation and formatting.",
+  keywords: ["json to csv","csv to json","xml to json","json to xml","data format converter","data transformation tool","pkctechs"],
   alternates: {
     canonical: "https://pkctechs.in/tools/format-converter",
   },
   openGraph: {
-    title: "Free Data Format Converter (JSON, CSV, XML)",
-    description: "Convert structured data between JSON, CSV, and XML formats instantly in your browser.",
+    title: "Data Format Converter | JSON, CSV & XML Converter Online",
+    description: "Convert between JSON, CSV, and XML formats instantly. Free online developer utility for data transformation and formatting.",
     url: "https://pkctechs.in/tools/format-converter",
     siteName: "Data Format Converter",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Data Format Converter | pkctechs",
-    description: "Convert data structures between JSON, CSV, and XML for free.",
+    title: "Data Format Converter | JSON, CSV & XML Converter Online",
+    description: "Convert between JSON, CSV, and XML formats instantly. Free online developer utility for data transformation and formatting.",
   },
 };
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  "name": "Data Format Converter",
-  "operatingSystem": "All",
-  "applicationCategory": "DeveloperApplication",
-  "offers": {
-    "@type": "Offer",
-    "price": "0",
-    "priceCurrency": "USD"
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Data Format Converter",
+    "url": "https://pkctechs.in/tools/format-converter",
+    "operatingSystem": "All",
+    "applicationCategory": "UtilitiesApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Convert between JSON, CSV, and XML formats instantly. Free online developer utility for data transformation and formatting."
   },
-  "description": "Convert structured data between JSON, CSV, and XML formats online."
-};
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://pkctechs.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://pkctechs.in/#tools"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Data Format Converter",
+        "item": "https://pkctechs.in/tools/format-converter"
+      }
+    ]
+  }
+];
 
 export default function FormatConverterPage() {
   return (

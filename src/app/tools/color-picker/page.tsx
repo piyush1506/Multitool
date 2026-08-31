@@ -3,17 +3,73 @@ import ColorPickerClient from "@/components/tools/ColorPickerClient";
 
 export const metadata: Metadata = {
   title: "Color Picker & Palette Generator | HEX, RGB, HSL Converter",
-  description: "Pick colors, convert formats between HEX, RGB, HSL instantly online.",
-  keywords: "color, picker, hex, rgb, hsl, free online tool, pkctechs",
-  applicationName: "Color Picker & Palette Generator",
+  description: "Pick colors, convert formats (HEX, RGB, HSL), and generate stunning color palettes online for free. Perfect for web designers and developers.",
+  keywords: ["color picker","hex to rgb","rgb to hex","color palette generator","color converter","hex color picker","pkctechs"],
+  alternates: {
+    canonical: "https://pkctechs.in/tools/color-picker",
+  },
   openGraph: {
+    title: "Color Picker & Palette Generator | HEX, RGB, HSL Converter",
+    description: "Pick colors, convert formats (HEX, RGB, HSL), and generate stunning color palettes online for free. Perfect for web designers and developers.",
+    url: "https://pkctechs.in/tools/color-picker",
     siteName: "Color Picker & Palette Generator",
-  }
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Color Picker & Palette Generator | HEX, RGB, HSL Converter",
+    description: "Pick colors, convert formats (HEX, RGB, HSL), and generate stunning color palettes online for free. Perfect for web designers and developers.",
+  },
 };
+
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Color Picker & Palette Generator",
+    "url": "https://pkctechs.in/tools/color-picker",
+    "operatingSystem": "All",
+    "applicationCategory": "DesignApplication",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "description": "Pick colors, convert formats (HEX, RGB, HSL), and generate stunning color palettes online for free. Perfect for web designers and developers."
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://pkctechs.in"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Tools",
+        "item": "https://pkctechs.in/#tools"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Color Picker & Palette Generator",
+        "item": "https://pkctechs.in/tools/color-picker"
+      }
+    ]
+  }
+];
 
 export default function ColorPickerPage() {
   return (
     <div className="container mx-auto px-6 py-16 max-w-5xl relative z-10">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           Color Picker & Palette
