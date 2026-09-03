@@ -108,6 +108,7 @@ export const metadata: Metadata = {
   },
   other: {
     "google-adsense-account": "ca-pub-9516698796421486",
+    "monetag": "be1b6c4567778a438225c816c8e5cca4",
   },
 };
 
@@ -181,6 +182,7 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
       <head>
+        <meta name="monetag" content="be1b6c4567778a438225c816c8e5cca4" />
         <meta name="google-adsense-account" content="ca-pub-9516698796421486" />
         <script
           async
