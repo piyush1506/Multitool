@@ -201,6 +201,12 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col selection:bg-blue-500/30">
+        <Script
+          src="https://quge5.com/88/tag.min.js"
+          data-zone="275961"
+          data-cfasync="false"
+          strategy="afterInteractive"
+        />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-0RSKYLDLLY" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
