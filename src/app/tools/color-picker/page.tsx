@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import ColorPickerClient from "@/components/tools/ColorPickerClient";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ToolSeoSection } from "@/components/ToolSeoSection";
+import { getFaqSchema, toolsSeoData } from "@/data/toolsSeoData";
 
 export const metadata: Metadata = {
   title: "Color Picker & Palette Generator | HEX, RGB, HSL Converter",
@@ -22,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
+const faqSchema = getFaqSchema("color-picker");
+const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -62,6 +66,9 @@ const jsonLd = [
     ]
   }
 ];
+if (faqSchema) {
+  jsonLd.push(faqSchema);
+}
 
 export default function ColorPickerPage() {
   return (
@@ -70,6 +77,7 @@ export default function ColorPickerPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Breadcrumbs items={[{ name: "Tools", href: "/#tools" }, { name: "Color Picker & Palette Generator" }]} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           Color Picker & Palette
@@ -79,6 +87,7 @@ export default function ColorPickerPage() {
         </p>
       </div>
       <ColorPickerClient />
+      <ToolSeoSection toolSlug="color-picker" />
     </div>
   );
 }

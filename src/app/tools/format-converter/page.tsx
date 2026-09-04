@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import FormatConverterClient from "@/components/tools/FormatConverterClient";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ToolSeoSection } from "@/components/ToolSeoSection";
+import { getFaqSchema, toolsSeoData } from "@/data/toolsSeoData";
 
 export const metadata: Metadata = {
   title: "Data Format Converter | JSON, CSV & XML Converter Online",
@@ -22,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
+const faqSchema = getFaqSchema("format-converter");
+const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -62,6 +66,9 @@ const jsonLd = [
     ]
   }
 ];
+if (faqSchema) {
+  jsonLd.push(faqSchema);
+}
 
 export default function FormatConverterPage() {
   return (
@@ -70,6 +77,7 @@ export default function FormatConverterPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Breadcrumbs items={[{ name: "Tools", href: "/#tools" }, { name: "Data Format Converter" }]} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           Data Format Converter
@@ -79,6 +87,7 @@ export default function FormatConverterPage() {
         </p>
       </div>
       <FormatConverterClient />
+      <ToolSeoSection toolSlug="format-converter" />
     </div>
   );
 }

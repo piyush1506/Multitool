@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import QrGeneratorClient from "@/components/tools/QrGeneratorClient";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ToolSeoSection } from "@/components/ToolSeoSection";
+import { getFaqSchema, toolsSeoData } from "@/data/toolsSeoData";
 
 export const metadata: Metadata = {
   title: "QR Code Generator Online | Free Custom QR Code Maker",
@@ -22,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
+const faqSchema = getFaqSchema("qr-generator");
+const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -62,6 +66,9 @@ const jsonLd = [
     ]
   }
 ];
+if (faqSchema) {
+  jsonLd.push(faqSchema);
+}
 
 export default function QrGeneratorPage() {
   return (
@@ -70,6 +77,7 @@ export default function QrGeneratorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Breadcrumbs items={[{ name: "Tools", href: "/#tools" }, { name: "QR Code Generator Online" }]} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           QR Code Generator
@@ -79,6 +87,7 @@ export default function QrGeneratorPage() {
         </p>
       </div>
       <QrGeneratorClient />
+      <ToolSeoSection toolSlug="qr-generator" />
     </div>
   );
 }

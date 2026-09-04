@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import PasswordGeneratorClient from "@/components/tools/PasswordGeneratorClient";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ToolSeoSection } from "@/components/ToolSeoSection";
+import { getFaqSchema, toolsSeoData } from "@/data/toolsSeoData";
 
 export const metadata: Metadata = {
   title: "Password & Token Generator | Secure Random Password Tool",
@@ -22,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
+const faqSchema = getFaqSchema("password-generator");
+const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -62,6 +66,9 @@ const jsonLd = [
     ]
   }
 ];
+if (faqSchema) {
+  jsonLd.push(faqSchema);
+}
 
 export default function PasswordGeneratorPage() {
   return (
@@ -70,6 +77,7 @@ export default function PasswordGeneratorPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Breadcrumbs items={[{ name: "Tools", href: "/#tools" }, { name: "Password & Token Generator" }]} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           Password & Token Generator
@@ -79,6 +87,7 @@ export default function PasswordGeneratorPage() {
         </p>
       </div>
       <PasswordGeneratorClient />
+      <ToolSeoSection toolSlug="password-generator" />
     </div>
   );
 }

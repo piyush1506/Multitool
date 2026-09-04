@@ -1,9 +1,10 @@
 import { MetadataRoute } from 'next';
+import { guidesData } from '@/data/guidesData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://pkctechs.in';
 
-  const routes = [
+  const toolRoutes = [
     '',
     '/tools/image-resizer',
     '/tools/image-converter',
@@ -26,10 +27,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/json-formatter',
   ];
 
-  return routes.map((route) => ({
+  const guideRoutes = [
+    '/guides',
+    ...Object.keys(guidesData).map((slug) => `/guides/${slug}`),
+  ];
+
+  const toolEntries = toolRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
-    changeFrequency: route === '' ? 'daily' : 'weekly',
-    priority: route === '' ? 1.0 : 0.8,
+    changeFrequency: (route === '' ? 'daily' : 'weekly') as 'daily' | 'weekly',
+    priority: route === '' ? 1.0 : 0.9,
   }));
+
+  const guideEntries = guideRoutes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: route === '/guides' ? 0.8 : 0.85,
+  }));
+
+  return [...toolEntries, ...guideEntries];
 }
+

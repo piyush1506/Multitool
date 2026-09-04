@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import SplitPdfClient from "@/components/tools/SplitPdfClient";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ToolSeoSection } from "@/components/ToolSeoSection";
+import { getFaqSchema, toolsSeoData } from "@/data/toolsSeoData";
 
 export const metadata: Metadata = {
   title: "Split PDF | Extract Pages from PDF Online Free",
@@ -22,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
+const faqSchema = getFaqSchema("split-pdf");
+const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -62,6 +66,9 @@ const jsonLd = [
     ]
   }
 ];
+if (faqSchema) {
+  jsonLd.push(faqSchema);
+}
 
 export default function SplitPdfPage() {
   return (
@@ -70,6 +77,7 @@ export default function SplitPdfPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Breadcrumbs items={[{ name: "Tools", href: "/#tools" }, { name: "Split PDF" }]} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           Split PDF
@@ -79,6 +87,7 @@ export default function SplitPdfPage() {
         </p>
       </div>
       <SplitPdfClient />
+      <ToolSeoSection toolSlug="split-pdf" />
     </div>
   );
 }

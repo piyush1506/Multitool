@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import BackgroundRemoverClient from "@/components/tools/BackgroundRemoverClient";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ToolSeoSection } from "@/components/ToolSeoSection";
+import { getFaqSchema, toolsSeoData } from "@/data/toolsSeoData";
 
 export const metadata: Metadata = {
   title: "Background Remover Online | Free Transparent PNG Maker",
@@ -22,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
+const faqSchema = getFaqSchema("background-remover");
+const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -62,6 +66,9 @@ const jsonLd = [
     ]
   }
 ];
+if (faqSchema) {
+  jsonLd.push(faqSchema);
+}
 
 export default function BackgroundRemoverPage() {
   return (
@@ -70,6 +77,7 @@ export default function BackgroundRemoverPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Breadcrumbs items={[{ name: "Tools", href: "/#tools" }, { name: "Background Remover Online" }]} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           Background Remover
@@ -79,6 +87,7 @@ export default function BackgroundRemoverPage() {
         </p>
       </div>
       <BackgroundRemoverClient />
+      <ToolSeoSection toolSlug="background-remover" />
     </div>
   );
 }

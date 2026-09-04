@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import ImageConverterClient from "@/components/tools/ImageConverterClient";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ToolSeoSection } from "@/components/ToolSeoSection";
+import { getFaqSchema, toolsSeoData } from "@/data/toolsSeoData";
 
 export const metadata: Metadata = {
   title: "Image Converter | Convert PNG, JPG, WEBP & SVG Online",
@@ -22,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
+const faqSchema = getFaqSchema("image-converter");
+const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -62,6 +66,9 @@ const jsonLd = [
     ]
   }
 ];
+if (faqSchema) {
+  jsonLd.push(faqSchema);
+}
 
 export default function ImageConverterPage() {
   return (
@@ -70,6 +77,7 @@ export default function ImageConverterPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Breadcrumbs items={[{ name: "Tools", href: "/#tools" }, { name: "Image Converter" }]} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           Image Converter
@@ -79,6 +87,7 @@ export default function ImageConverterPage() {
         </p>
       </div>
       <ImageConverterClient />
+      <ToolSeoSection toolSlug="image-converter" />
     </div>
   );
 }

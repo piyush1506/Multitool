@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import JsonFormatterClient from "@/components/tools/JsonFormatterClient";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ToolSeoSection } from "@/components/ToolSeoSection";
+import { getFaqSchema, toolsSeoData } from "@/data/toolsSeoData";
 
 export const metadata: Metadata = {
   title: "JSON Formatter & Validator | Beautify and Minify JSON",
@@ -22,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
+const faqSchema = getFaqSchema("json-formatter");
+const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -62,6 +66,9 @@ const jsonLd = [
     ]
   }
 ];
+if (faqSchema) {
+  jsonLd.push(faqSchema);
+}
 
 export default function JsonFormatterPage() {
   return (
@@ -70,6 +77,7 @@ export default function JsonFormatterPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Breadcrumbs items={[{ name: "Tools", href: "/#tools" }, { name: "JSON Formatter & Validator" }]} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           JSON Formatter & Validator
@@ -79,6 +87,7 @@ export default function JsonFormatterPage() {
         </p>
       </div>
       <JsonFormatterClient />
+      <ToolSeoSection toolSlug="json-formatter" />
     </div>
   );
 }

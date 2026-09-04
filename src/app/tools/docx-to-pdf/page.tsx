@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import DocxToPdfClient from "@/components/tools/DocxToPdfClient";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ToolSeoSection } from "@/components/ToolSeoSection";
+import { getFaqSchema, toolsSeoData } from "@/data/toolsSeoData";
 
 export const metadata: Metadata = {
   title: "DOCX to PDF Converter | Convert Word to PDF Online Free",
@@ -22,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
+const faqSchema = getFaqSchema("docx-to-pdf");
+const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -62,6 +66,9 @@ const jsonLd = [
     ]
   }
 ];
+if (faqSchema) {
+  jsonLd.push(faqSchema);
+}
 
 export default function DocxToPdfPage() {
   return (
@@ -70,6 +77,7 @@ export default function DocxToPdfPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Breadcrumbs items={[{ name: "Tools", href: "/#tools" }, { name: "DOCX to PDF Converter" }]} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           DOCX to PDF Converter
@@ -79,6 +87,7 @@ export default function DocxToPdfPage() {
         </p>
       </div>
       <DocxToPdfClient />
+      <ToolSeoSection toolSlug="docx-to-pdf" />
     </div>
   );
 }

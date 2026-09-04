@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import Base64Client from "@/components/tools/Base64Client";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ToolSeoSection } from "@/components/ToolSeoSection";
+import { getFaqSchema, toolsSeoData } from "@/data/toolsSeoData";
 
 export const metadata: Metadata = {
   title: "Base64 Encoder & Decoder | Convert Text & Images to Base64 Online",
@@ -22,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
+const faqSchema = getFaqSchema("base64-tool");
+const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -62,6 +66,9 @@ const jsonLd = [
     ]
   }
 ];
+if (faqSchema) {
+  jsonLd.push(faqSchema);
+}
 
 export default function Base64Page() {
   return (
@@ -70,6 +77,7 @@ export default function Base64Page() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Breadcrumbs items={[{ name: "Tools", href: "/#tools" }, { name: "Base64 Encoder & Decoder" }]} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           Base64 Encoder & Decoder
@@ -79,6 +87,7 @@ export default function Base64Page() {
         </p>
       </div>
       <Base64Client />
+      <ToolSeoSection toolSlug="base64-tool" />
     </div>
   );
 }

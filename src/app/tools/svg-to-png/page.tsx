@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import SvgToPngClient from "@/components/tools/SvgToPngClient";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ToolSeoSection } from "@/components/ToolSeoSection";
+import { getFaqSchema, toolsSeoData } from "@/data/toolsSeoData";
 
 export const metadata: Metadata = {
   title: "SVG to PNG Converter | Convert SVG to High-Res PNG",
@@ -22,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
+const faqSchema = getFaqSchema("svg-to-png");
+const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -62,6 +66,9 @@ const jsonLd = [
     ]
   }
 ];
+if (faqSchema) {
+  jsonLd.push(faqSchema);
+}
 
 export default function SvgToPngPage() {
   return (
@@ -70,6 +77,7 @@ export default function SvgToPngPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Breadcrumbs items={[{ name: "Tools", href: "/#tools" }, { name: "SVG to PNG Converter" }]} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           SVG to PNG Converter
@@ -79,6 +87,7 @@ export default function SvgToPngPage() {
         </p>
       </div>
       <SvgToPngClient />
+      <ToolSeoSection toolSlug="svg-to-png" />
     </div>
   );
 }

@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import PdfToImageClient from "@/components/tools/PdfToImageClient";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ToolSeoSection } from "@/components/ToolSeoSection";
+import { getFaqSchema, toolsSeoData } from "@/data/toolsSeoData";
 
 export const metadata: Metadata = {
   title: "PDF to Image Converter | Convert PDF Pages to JPG & PNG",
@@ -22,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
+const faqSchema = getFaqSchema("pdf-to-image");
+const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -62,6 +66,9 @@ const jsonLd = [
     ]
   }
 ];
+if (faqSchema) {
+  jsonLd.push(faqSchema);
+}
 
 export default function PdfToImagePage() {
   return (
@@ -70,6 +77,7 @@ export default function PdfToImagePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Breadcrumbs items={[{ name: "Tools", href: "/#tools" }, { name: "PDF to Image Converter" }]} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           PDF to Image
@@ -79,6 +87,7 @@ export default function PdfToImagePage() {
         </p>
       </div>
       <PdfToImageClient />
+      <ToolSeoSection toolSlug="pdf-to-image" />
     </div>
   );
 }

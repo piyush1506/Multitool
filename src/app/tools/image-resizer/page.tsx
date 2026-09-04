@@ -1,5 +1,8 @@
 import { Metadata } from "next";
 import ImageResizerClient from "@/components/tools/ImageResizerClient";
+import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { ToolSeoSection } from "@/components/ToolSeoSection";
+import { getFaqSchema, toolsSeoData } from "@/data/toolsSeoData";
 
 export const metadata: Metadata = {
   title: "Image Resizer | Resize Image Dimensions Online For Free",
@@ -22,7 +25,8 @@ export const metadata: Metadata = {
   },
 };
 
-const jsonLd = [
+const faqSchema = getFaqSchema("image-resizer");
+const jsonLd: any[] = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -62,6 +66,9 @@ const jsonLd = [
     ]
   }
 ];
+if (faqSchema) {
+  jsonLd.push(faqSchema);
+}
 
 export default function ImageResizerPage() {
   return (
@@ -70,6 +77,7 @@ export default function ImageResizerPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
+      <Breadcrumbs items={[{ name: "Tools", href: "/#tools" }, { name: "Image Resizer" }]} />
       <div className="text-center mb-12">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight mb-4 gradient-text">
           Image Resizer
@@ -79,6 +87,7 @@ export default function ImageResizerPage() {
         </p>
       </div>
       <ImageResizerClient />
+      <ToolSeoSection toolSlug="image-resizer" />
     </div>
   );
 }
