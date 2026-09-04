@@ -89,30 +89,35 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Practical Guides */}
+          {/* Practical Guides & Blog */}
           <div>
             <h3 className="text-xs uppercase tracking-wider font-semibold text-slate-900 dark:text-zinc-200 mb-4">
-              Guides & Tutorials
+              Resources & Blog
             </h3>
             <ul className="space-y-2.5 text-xs text-slate-600 dark:text-zinc-400">
               <li>
-                <Link href="/guides/how-to-compress-pdf-to-200kb" className="hover:text-blue-500 transition-colors">
-                  Compress PDF to 200KB
+                <Link href="/blog/best-free-ilovepdf-alternatives-2026" className="hover:text-blue-500 transition-colors">
+                  iLovePDF Alternatives (2026)
                 </Link>
               </li>
               <li>
-                <Link href="/guides/how-to-remove-background-from-image-free" className="hover:text-blue-500 transition-colors">
-                  Transparent Background PNG
+                <Link href="/blog/webp-vs-png-vs-jpeg-comparison" className="hover:text-blue-500 transition-colors">
+                  WebP vs PNG vs JPEG
                 </Link>
               </li>
               <li>
-                <Link href="/guides/how-to-convert-pdf-to-word-without-losing-formatting" className="hover:text-blue-500 transition-colors">
-                  Convert PDF to Word Free
+                <Link href="/blog/optimize-images-for-google-core-web-vitals" className="hover:text-blue-500 transition-colors">
+                  Optimize for Core Web Vitals
                 </Link>
               </li>
               <li>
-                <Link href="/guides" className="text-blue-400 font-semibold hover:underline">
-                  View All Guides →
+                <Link href="/blog" className="text-blue-400 font-semibold hover:underline">
+                  Visit Blog →
+                </Link>
+              </li>
+              <li>
+                <Link href="/guides" className="text-zinc-400 hover:text-white transition-colors">
+                  All How-To Guides
                 </Link>
               </li>
             </ul>

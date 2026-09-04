@@ -12,6 +12,7 @@ const navLinks = [
   { name: "Convert", href: "/tools/image-converter" },
   { name: "PDF Merge", href: "/tools/merge-pdf" },
   { name: "Guides", href: "/guides" },
+  { name: "Blog", href: "/blog" },
 ];
 
 export function Navbar() {

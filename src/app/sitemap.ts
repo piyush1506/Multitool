@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
 import { guidesData } from '@/data/guidesData';
+import { blogPosts } from '@/data/blogData';
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://pkctechs.in';
@@ -32,6 +33,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...Object.keys(guidesData).map((slug) => `/guides/${slug}`),
   ];
 
+  const blogRoutes = [
+    '/blog',
+    ...Object.keys(blogPosts).map((slug) => `/blog/${slug}`),
+  ];
+
   const toolEntries = toolRoutes.map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
@@ -46,6 +52,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '/guides' ? 0.8 : 0.85,
   }));
 
-  return [...toolEntries, ...guideEntries];
+  const blogEntries = blogRoutes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'weekly' as const,
+    priority: route === '/blog' ? 0.85 : 0.8,
+  }));
+
+  return [...toolEntries, ...guideEntries, ...blogEntries];
 }
+
 
