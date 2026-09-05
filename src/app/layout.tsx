@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://pkctechs.in"),
+  alternates: {
+    canonical: "https://pkctechs.in",
+  },
   title: "pkctechs - Free Online Image, PDF & Web Utility Tools",
   description: "Free online utility tools & iLovePDF alternative. Convert PDF to Word, compress images, remove backgrounds & generate QR codes. 100% private & browser-based.",
   icons: {
