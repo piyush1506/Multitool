@@ -109,7 +109,6 @@ export const metadata: Metadata = {
   },
   other: {
     "google-adsense-account": "ca-pub-9516698796421486",
-    "monetag": "be1b6c4567778a438225c816c8e5cca4",
   },
 };
 
@@ -188,7 +187,6 @@ export default function RootLayout({
         <link rel="icon" href="/icon.png" type="image/png" sizes="48x48" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <meta name="monetag" content="be1b6c4567778a438225c816c8e5cca4" />
         <meta name="google-adsense-account" content="ca-pub-9516698796421486" />
         <script
           async
@@ -201,12 +199,6 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col selection:bg-blue-500/30">
-        <Script
-          src="https://quge5.com/88/tag.min.js"
-          data-zone="275961"
-          data-cfasync="false"
-          strategy="afterInteractive"
-        />
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-0RSKYLDLLY" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
