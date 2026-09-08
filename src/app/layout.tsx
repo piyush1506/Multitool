@@ -22,15 +22,7 @@ export const metadata: Metadata = {
   },
   title: "pkctechs - Free Online Image, PDF & Web Utility Tools",
   description: "Free online utility tools & iLovePDF alternative. Convert PDF to Word, compress images, remove backgrounds & generate QR codes. 100% private & browser-based.",
-  icons: {
-    icon: [
-      { url: "/favicon.ico", sizes: "48x48", type: "image/x-icon" },
-      { url: "/icon.png", sizes: "48x48", type: "image/png" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-    ],
-    shortcut: "/favicon.ico",
-    apple: "/apple-touch-icon.png",
-  },
+
   keywords: [
     "ilovepdf",
     "ilovepdff",
@@ -185,12 +177,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
     >
       <head>
-        <link rel="icon" href="/favicon.ico" sizes="48x48" type="image/x-icon" />
-        <link rel="icon" href="/icon.svg" type="image/svg+xml" sizes="any" />
-        <link rel="icon" href="/icon.png" type="image/png" sizes="48x48" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="shortcut icon" href="/favicon.ico" />
+
         <meta name="google-adsense-account" content="ca-pub-9516698796421486" />
+        <meta name="msvalidate.01" content="1E1F0441BAD371C012549837626A7618" />
         <script
           async
           src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9516698796421486"

@@ -27,6 +27,46 @@ import {
 
 export const tools = [
   {
+    title: "AI Image Generator",
+    description: "Generate stunning photorealistic and artistic images from text prompts using Google AI Studio. Multiple aspect ratios & styles.",
+    icon: Sparkles,
+    href: "/tools/image-generator",
+    gradient: "from-purple-500/30 via-pink-500/20 to-blue-500/30",
+    iconColor: "text-purple-600 dark:text-purple-400",
+    category: "Image",
+    badge: "NEW AI",
+  },
+  {
+    title: "AI PDF Chat",
+    description: "Upload any PDF and instantly ask questions, extract summaries, and find precise answers using Gemini AI.",
+    icon: Sparkles,
+    href: "/tools/pdf-chat",
+    gradient: "from-rose-500/30 via-red-500/20 to-orange-500/30",
+    iconColor: "text-rose-600 dark:text-rose-400",
+    category: "PDF",
+    badge: "NEW AI",
+  },
+  {
+    title: "AI Image Analyzer & OCR",
+    description: "Extract text from images (OCR), generate SEO alt-text, or ask custom questions about visual content instantly.",
+    icon: Sparkles,
+    href: "/tools/image-analyzer",
+    gradient: "from-cyan-500/30 via-blue-500/20 to-indigo-500/30",
+    iconColor: "text-cyan-600 dark:text-cyan-400",
+    category: "Image",
+    badge: "NEW AI",
+  },
+  {
+    title: "AI Text Summarizer",
+    description: "Instantly summarize articles, rewrite text in professional or casual tones, and fix grammar issues using AI.",
+    icon: Sparkles,
+    href: "/tools/text-summarizer",
+    gradient: "from-blue-500/30 via-indigo-500/20 to-purple-500/30",
+    iconColor: "text-blue-600 dark:text-blue-400",
+    category: "Document",
+    badge: "NEW AI",
+  },
+  {
     title: "Image Resizer",
     description: "Resize images to exact dimensions online. Maintain aspect ratio and high quality for free.",
     icon: ImageIcon,
@@ -267,39 +307,46 @@ export function HomeClient() {
 
       {/* Tools Grid */}
       {filteredTools.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="tools-grid">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6" id="tools-grid">
           {filteredTools.map((tool, index) => (
             <Link 
               key={tool.href} 
               href={tool.href}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative flex flex-col p-8 rounded-3xl glass-card border border-slate-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/90 shadow-sm hover:shadow-xl transition-all duration-300"
+              className="group relative flex flex-col p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl glass-card border border-slate-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/90 shadow-sm hover:shadow-xl transition-all duration-300"
             >
               {/* Premium Hover Glow */}
               <div 
-                className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${tool.gradient} opacity-0 transition-opacity duration-500 pointer-events-none ${hoveredIndex === index ? 'opacity-100' : ''}`}
+                className={`absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${tool.gradient} opacity-0 transition-opacity duration-500 pointer-events-none ${hoveredIndex === index ? 'opacity-100' : ''}`}
               />
               
-              <div className="relative z-10 flex items-start justify-between mb-8">
-                <div className="p-3.5 rounded-2xl bg-slate-100 dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 shadow-sm group-hover:scale-105 transition-transform duration-300">
-                  <tool.icon className={`h-6 w-6 ${tool.iconColor}`} />
+              <div className="relative z-10 flex items-start justify-between mb-3 sm:mb-6 md:mb-8">
+                <div className="p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-slate-100 dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 shadow-sm group-hover:scale-105 transition-transform duration-300">
+                  <tool.icon className={`h-5 w-5 sm:h-6 sm:w-6 ${tool.iconColor}`} />
                 </div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-zinc-300 bg-slate-100 dark:bg-zinc-800 px-3 py-1.5 rounded-full border border-slate-200 dark:border-zinc-700">
-                  {tool.category}
-                </span>
+                <div className="flex items-center gap-1 sm:gap-1.5 flex-wrap justify-end">
+                  {"badge" in tool && tool.badge && (
+                    <span className="text-[8px] sm:text-[10px] font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 bg-purple-500/10 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-purple-500/20 animate-pulse whitespace-nowrap">
+                      {tool.badge as string}
+                    </span>
+                  )}
+                  <span className="hidden sm:inline-flex text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-zinc-300 bg-slate-100 dark:bg-zinc-800 px-3 py-1.5 rounded-full border border-slate-200 dark:border-zinc-700">
+                    {tool.category}
+                  </span>
+                </div>
               </div>
               
-              <h3 className="relative z-10 text-xl font-bold mb-3 text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors tracking-tight">
+              <h3 className="relative z-10 text-base sm:text-lg md:text-xl font-bold mb-1.5 sm:mb-3 text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors tracking-tight line-clamp-2">
                 {tool.title}
               </h3>
               
-              <p className="relative z-10 text-slate-600 dark:text-zinc-300 text-sm leading-relaxed flex-1 mb-8 font-normal">
+              <p className="relative z-10 text-slate-600 dark:text-zinc-300 text-xs sm:text-sm leading-relaxed flex-1 mb-3 sm:mb-6 md:mb-8 font-normal line-clamp-3 sm:line-clamp-none">
                 {tool.description}
               </p>
               
-              <div className="relative z-10 flex items-center text-sm font-bold text-emerald-600 dark:text-emerald-400 opacity-0 group-hover:opacity-100 transition-all -translate-x-2 group-hover:translate-x-0 duration-300">
-                Launch Tool <ArrowRight className="ml-2 h-4 w-4" />
+              <div className="relative z-10 flex items-center text-xs sm:text-sm font-bold text-emerald-600 dark:text-emerald-400 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-all sm:-translate-x-2 group-hover:translate-x-0 duration-300 mt-auto">
+                <span className="hidden sm:inline">Launch Tool</span> <ArrowRight className="sm:ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
               </div>
             </Link>
           ))}

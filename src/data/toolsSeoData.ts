@@ -1092,6 +1092,68 @@ export const toolsSeoData: Record<string, ToolSeoData> = {
     ],
     relatedSlugs: ["format-converter", "base64-tool", "color-picker", "password-generator"],
   },
+  "image-generator": {
+    slug: "image-generator",
+    name: "Free AI Image Generator | Text to Image Online",
+    shortName: "AI Image Generator",
+    category: "Image",
+    badge: "Google AI Studio API Powered",
+    intro: "Create breathtaking, ultra-realistic or artistic visuals from simple text prompts. Powered by Google AI Studio Gemini models and intelligent key rotation, offering multiple styles and customizable aspect ratios.",
+    steps: [
+      {
+        step: 1,
+        title: "Describe Your Vision",
+        description: "Type your detailed scene description or click 'Surprise Me' for instant creative inspiration.",
+      },
+      {
+        step: 2,
+        title: "Select Style & Ratio",
+        description: "Choose an artistic aesthetic like Photorealistic, 3D Pixar, Cinematic, or Anime, and pick your target aspect ratio.",
+      },
+      {
+        step: 3,
+        title: "Generate & Download",
+        description: "Click generate to render high-resolution images in seconds, then download in PNG or JPG with zero watermarks.",
+      },
+    ],
+    features: [
+      {
+        title: "Google AI Studio Multimodal Models",
+        description: "Harness the power of state-of-the-art generative diffusion and Gemini image generation technology.",
+      },
+      {
+        title: "Diverse Artistic Style Presets",
+        description: "Easily switch between Photorealistic photography, Pixar 3D animation, Cyberpunk, Cinematic film, and Watercolor.",
+      },
+      {
+        title: "Flexible Aspect Ratios",
+        description: "Produce square (1:1), landscape (16:9), mobile vertical story (9:16), or classic photo formats effortlessly.",
+      },
+      {
+        title: "100% Free With Zero Watermarks",
+        description: "Download crystal-clear high-definition images ready for social media, presentations, wallpapers, and marketing.",
+      },
+    ],
+    faqs: [
+      {
+        question: "Is this AI Image Generator free to use?",
+        answer: "Yes, our online AI Image Generator is 100% free with no hidden charges, subscriptions, or watermarks added to your images.",
+      },
+      {
+        question: "What model powers the AI Image Generator?",
+        answer: "The generator connects to Google AI Studio's generative multimodal models (Gemini 2.5/3.1 Flash Image) with intelligent fallback capabilities.",
+      },
+      {
+        question: "Can I use the generated images for commercial projects?",
+        answer: "Yes, images generated through the tool can be freely downloaded and used for your personal, creative, and commercial projects.",
+      },
+      {
+        question: "How can I get the best results from the image generator?",
+        answer: "Be specific in your prompt: describe the subject, lighting (e.g. golden hour, neon studio lighting), background details, and mood.",
+      },
+    ],
+    relatedSlugs: ["image-resizer", "image-converter", "background-remover", "image-compressor"],
+  },
 };
 
 export function getFaqSchema(slug: string) {

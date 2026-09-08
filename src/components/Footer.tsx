@@ -17,7 +17,7 @@ export function Footer() {
               </span>
             </Link>
             <p className="text-xs text-slate-500 dark:text-zinc-400 leading-relaxed font-light">
-              Free, browser-based online utility suite featuring 19 privacy-focused image, PDF, document, and developer tools.
+              Free, browser-based online utility suite featuring 20 privacy-focused image, PDF, document, and developer tools.
             </p>
           </div>
 
@@ -27,6 +27,12 @@ export function Footer() {
               Image Tools
             </h3>
             <ul className="space-y-2.5 text-xs text-slate-600 dark:text-zinc-400">
+              <li>
+                <Link href="/tools/image-generator" className="hover:text-purple-500 text-purple-600 dark:text-purple-400 font-medium transition-colors flex items-center gap-1.5">
+                  <span>AI Image Generator</span>
+                  <span className="text-[9px] px-1.5 py-0.2 rounded bg-purple-500/10 text-purple-600 dark:text-purple-400 border border-purple-500/20 font-bold">NEW</span>
+                </Link>
+              </li>
               <li>
                 <Link href="/tools/image-resizer" className="hover:text-blue-500 transition-colors">
                   Image Resizer
