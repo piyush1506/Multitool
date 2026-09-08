@@ -3,10 +3,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { MessageSquare, UploadCloud, FileText, Send, Sparkles, Settings2, X, AlertCircle } from "lucide-react";
 import { useDropzone } from "react-dropzone";
-import * as pdfjsLib from "pdfjs-dist";
-
-// Set worker path for pdfjs
-pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
 
 interface ChatMessage {
   role: "user" | "ai";
@@ -49,6 +45,8 @@ export default function PdfChatClient() {
     setIsExtracting(true);
     setError(null);
     try {
+      const pdfjsLib = await import("pdfjs-dist");
+      pdfjsLib.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjsLib.version}/pdf.worker.min.js`;
       const arrayBuffer = await pdfFile.arrayBuffer();
       const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
       let text = "";
