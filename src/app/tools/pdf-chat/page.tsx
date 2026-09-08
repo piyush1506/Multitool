@@ -1,6 +1,10 @@
 import { Metadata } from "next";
-import PdfChatClient from "@/components/tools/PdfChatClient";
+import dynamic from "next/dynamic";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+
+const PdfChatClient = dynamic(() => import("@/components/tools/PdfChatClient"), {
+  ssr: false,
+});
 
 export const metadata: Metadata = {
   title: "Free AI PDF Chat & Document Assistant | powered by Gemini",
