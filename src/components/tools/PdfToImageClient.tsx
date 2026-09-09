@@ -102,23 +102,25 @@ export default function PdfToImageClient() {
         <div 
           {...getRootProps()} 
           className={`border-2 border-dashed rounded-2xl p-16 text-center cursor-pointer transition-colors ${
-            isDragActive ? "border-yellow-400 bg-yellow-400/10" : "border-slate-700 hover:border-slate-500 hover:bg-slate-800/50"
+            isDragActive 
+              ? "border-yellow-400 bg-yellow-400/10" 
+              : "border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 bg-white dark:bg-slate-900/50 hover:bg-slate-50 dark:hover:bg-slate-800/50 shadow-sm"
           }`}
         >
           <input {...getInputProps()} />
           <UploadCloud className="mx-auto h-16 w-16 text-slate-400 mb-4" />
-          <p className="text-xl font-medium text-slate-200 mb-2">
+          <p className="text-xl font-medium text-slate-700 dark:text-slate-200 mb-2">
             {isDragActive ? "Drop the PDF here" : "Drag & drop a PDF file, or click to select"}
           </p>
         </div>
       ) : isProcessing ? (
-        <div className="bg-slate-900 rounded-2xl p-16 border border-white/10 flex flex-col items-center justify-center text-center">
-          <Loader2 className="h-12 w-12 text-yellow-400 animate-spin mb-4" />
-          <h3 className="text-xl font-bold text-white mb-2">Processing PDF...</h3>
-          <p className="text-slate-400">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl p-16 border border-slate-200 dark:border-white/10 shadow-sm flex flex-col items-center justify-center text-center">
+          <Loader2 className="h-12 w-12 text-yellow-500 animate-spin mb-4" />
+          <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-2">Processing PDF...</h3>
+          <p className="text-slate-500 dark:text-slate-400">
             Extracting page {progress.current} of {progress.total}
           </p>
-          <div className="w-full max-w-md bg-slate-800 rounded-full h-2.5 mt-6 overflow-hidden">
+          <div className="w-full max-w-md bg-slate-100 dark:bg-slate-800 rounded-full h-2.5 mt-6 overflow-hidden">
             <div 
               className="bg-gradient-to-r from-yellow-400 to-orange-400 h-2.5 rounded-full transition-all duration-300" 
               style={{ width: `${(progress.current / progress.total) * 100}%` }}
@@ -126,19 +128,19 @@ export default function PdfToImageClient() {
           </div>
         </div>
       ) : (
-        <div className="bg-slate-900 rounded-2xl p-8 border border-white/10">
+        <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-white/10 shadow-sm">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-8 gap-4">
             <div>
-              <h2 className="text-2xl font-bold text-white flex items-center gap-2 mb-1">
-                <FileDown className="h-6 w-6 text-yellow-400" /> Extracted Pages
+              <h2 className="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2 mb-1">
+                <FileDown className="h-6 w-6 text-yellow-500" /> Extracted Pages
               </h2>
-              <p className="text-slate-400 text-sm">Found {images.length} pages in {fileName}.pdf</p>
+              <p className="text-slate-500 dark:text-slate-400 text-sm">Found {images.length} pages in {fileName}.pdf</p>
             </div>
             
             <div className="flex gap-4">
               <button 
                 onClick={() => setImages([])}
-                className="px-4 py-2 text-sm font-medium text-slate-300 hover:text-white transition-colors"
+                className="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white transition-colors"
               >
                 Upload New
               </button>
@@ -153,7 +155,7 @@ export default function PdfToImageClient() {
           
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {images.map((img) => (
-              <div key={img.id} className="bg-slate-800 rounded-xl overflow-hidden border border-slate-700 flex flex-col">
+              <div key={img.id} className="bg-slate-50 dark:bg-slate-800 rounded-xl overflow-hidden border border-slate-200 dark:border-slate-700 shadow-xs flex flex-col">
                 <div className="aspect-[1/1.4] w-full relative group">
                   <img 
                     src={img.dataUrl} 
@@ -169,8 +171,8 @@ export default function PdfToImageClient() {
                     </button>
                   </div>
                 </div>
-                <div className="p-3 bg-slate-800 text-center border-t border-slate-700">
-                  <span className="text-sm font-medium text-slate-300">Page {img.pageNumber}</span>
+                <div className="p-3 bg-white dark:bg-slate-800 text-center border-t border-slate-200 dark:border-slate-700">
+                  <span className="text-sm font-medium text-slate-700 dark:text-slate-300">Page {img.pageNumber}</span>
                 </div>
               </div>
             ))}

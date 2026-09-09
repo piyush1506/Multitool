@@ -22,7 +22,9 @@ import {
   Code,
   FileType,
   FileCode,
-  Sparkles
+  Sparkles,
+  Video,
+  ImageDown
 } from "lucide-react";
 
 export const tools = [
@@ -237,9 +239,29 @@ export const tools = [
     iconColor: "text-purple-600 dark:text-purple-400",
     category: "Developer",
   },
+  {
+    title: "YouTube Video Downloader",
+    description: "Download YouTube videos in MP4 format. Choose from multiple quality options including 360p, 720p, and 1080p HD — fast and free.",
+    icon: Video,
+    href: "/tools/youtube-video-downloader",
+    gradient: "from-red-500/20 to-rose-500/20",
+    iconColor: "text-red-600 dark:text-red-400",
+    category: "YouTube",
+    badge: "NEW",
+  },
+  {
+    title: "YouTube Thumbnail Downloader",
+    description: "Extract and save high-quality thumbnails from any YouTube video in multiple resolutions. Instant and no signup required.",
+    icon: ImageDown,
+    href: "/tools/youtube-thumbnail-downloader",
+    gradient: "from-pink-500/20 to-fuchsia-500/20",
+    iconColor: "text-pink-600 dark:text-pink-400",
+    category: "YouTube",
+    badge: "NEW",
+  },
 ];
 
-const categories = ["All", "Image", "PDF", "Document", "Developer", "Security", "Utility"];
+const categories = ["All", "YouTube", "Image", "PDF", "Document", "Developer", "Security", "Utility"];
 
 export function HomeClient() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -276,7 +298,7 @@ export function HomeClient() {
           type="text"
           id="tools-search-input"
           className="block w-full pl-14 pr-24 py-4 bg-white dark:bg-zinc-900 border border-slate-300 dark:border-zinc-700 rounded-2xl text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-zinc-400 focus:outline-none focus:ring-2 focus:ring-emerald-500/50 focus:border-emerald-500 shadow-md text-lg font-normal transition-all"
-          placeholder="Search 19 tools (e.g., pdf, json, resize)..."
+          placeholder="Search 25 tools (e.g., pdf, json, youtube)..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
           aria-label="Search tools"
@@ -307,46 +329,52 @@ export function HomeClient() {
 
       {/* Tools Grid */}
       {filteredTools.length > 0 ? (
-        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-6" id="tools-grid">
+        <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-5 lg:gap-6" id="tools-grid">
           {filteredTools.map((tool, index) => (
             <Link 
               key={tool.href} 
               href={tool.href}
               onMouseEnter={() => setHoveredIndex(index)}
               onMouseLeave={() => setHoveredIndex(null)}
-              className="group relative flex flex-col p-4 sm:p-6 md:p-8 rounded-2xl sm:rounded-3xl glass-card border border-slate-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/90 shadow-sm hover:shadow-xl transition-all duration-300"
+              className="group relative flex flex-col justify-between p-4 sm:p-5 md:p-6 rounded-2xl sm:rounded-3xl glass-card border border-slate-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900/90 shadow-sm hover:shadow-xl transition-all duration-300 md:aspect-square overflow-hidden"
             >
               {/* Premium Hover Glow */}
               <div 
                 className={`absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${tool.gradient} opacity-0 transition-opacity duration-500 pointer-events-none ${hoveredIndex === index ? 'opacity-100' : ''}`}
               />
               
-              <div className="relative z-10 flex items-start justify-between mb-3 sm:mb-6 md:mb-8">
-                <div className="p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-slate-100 dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 shadow-sm group-hover:scale-105 transition-transform duration-300">
-                  <tool.icon className={`h-5 w-5 sm:h-6 sm:w-6 ${tool.iconColor}`} />
+              {/* Header: Icon + Category Badge */}
+              <div className="relative z-10 flex items-start justify-between mb-2">
+                <div className="p-2.5 sm:p-3 rounded-xl sm:rounded-2xl bg-slate-100 dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 shadow-sm group-hover:scale-105 transition-transform duration-300">
+                  <tool.icon className={`h-5 w-5 ${tool.iconColor}`} />
                 </div>
                 <div className="flex items-center gap-1 sm:gap-1.5 flex-wrap justify-end">
                   {"badge" in tool && tool.badge && (
-                    <span className="text-[8px] sm:text-[10px] font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 bg-purple-500/10 px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-full border border-purple-500/20 animate-pulse whitespace-nowrap">
+                    <span className="text-[8px] sm:text-[9px] font-bold uppercase tracking-wider text-purple-600 dark:text-purple-400 bg-purple-500/10 px-1.5 sm:px-2 py-0.5 rounded-full border border-purple-500/20 animate-pulse whitespace-nowrap">
                       {tool.badge as string}
                     </span>
                   )}
-                  <span className="hidden sm:inline-flex text-[11px] font-bold uppercase tracking-wider text-slate-700 dark:text-zinc-300 bg-slate-100 dark:bg-zinc-800 px-3 py-1.5 rounded-full border border-slate-200 dark:border-zinc-700">
+                  <span className="hidden sm:inline-flex text-[10px] font-bold uppercase tracking-wider text-slate-700 dark:text-zinc-300 bg-slate-100 dark:bg-zinc-800 px-2.5 py-1 rounded-full border border-slate-200 dark:border-zinc-700">
                     {tool.category}
                   </span>
                 </div>
               </div>
               
-              <h3 className="relative z-10 text-base sm:text-lg md:text-xl font-bold mb-1.5 sm:mb-3 text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors tracking-tight line-clamp-2">
-                {tool.title}
-              </h3>
+              {/* Title & Description */}
+              <div className="relative z-10 my-auto">
+                <h3 className="text-sm sm:text-base font-bold mb-1 sm:mb-1.5 text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors tracking-tight line-clamp-1 sm:line-clamp-2">
+                  {tool.title}
+                </h3>
+                
+                <p className="text-slate-600 dark:text-zinc-400 text-xs leading-relaxed font-normal line-clamp-2 sm:line-clamp-3">
+                  {tool.description}
+                </p>
+              </div>
               
-              <p className="relative z-10 text-slate-600 dark:text-zinc-300 text-xs sm:text-sm leading-relaxed flex-1 mb-3 sm:mb-6 md:mb-8 font-normal line-clamp-3 sm:line-clamp-none">
-                {tool.description}
-              </p>
-              
-              <div className="relative z-10 flex items-center text-xs sm:text-sm font-bold text-emerald-600 dark:text-emerald-400 opacity-100 sm:opacity-0 group-hover:opacity-100 transition-all sm:-translate-x-2 group-hover:translate-x-0 duration-300 mt-auto">
-                <span className="hidden sm:inline">Launch Tool</span> <ArrowRight className="sm:ml-2 h-3.5 w-3.5 sm:h-4 sm:w-4" />
+              {/* Bottom Action */}
+              <div className="relative z-10 flex items-center text-xs font-bold text-emerald-600 dark:text-emerald-400 opacity-100 sm:opacity-90 group-hover:opacity-100 transition-all duration-300 mt-2 pt-2 border-t border-slate-100 dark:border-zinc-800/60">
+                <span>Launch Tool</span>
+                <ArrowRight className="ml-1.5 h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
               </div>
             </Link>
           ))}

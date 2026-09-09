@@ -72,42 +72,44 @@ export default function PdfCompressorClient() {
         <div
           {...getRootProps()}
           className={`border-2 border-dashed rounded-2xl p-16 text-center cursor-pointer transition-colors ${
-            isDragActive ? "border-orange-400 bg-orange-400/10" : "border-slate-700 hover:border-slate-500 hover:bg-slate-800/50"
+            isDragActive 
+              ? "border-orange-400 bg-orange-400/10" 
+              : "border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 bg-white dark:bg-slate-900/50 hover:bg-slate-50 dark:hover:bg-slate-800/50 shadow-sm"
           }`}
         >
           <input {...getInputProps()} />
           <UploadCloud className="mx-auto h-16 w-16 text-slate-400 mb-4" />
-          <p className="text-xl font-medium text-slate-200 mb-2">
+          <p className="text-xl font-medium text-slate-700 dark:text-slate-200 mb-2">
             {isDragActive ? "Drop the PDF here" : "Drag & drop a PDF to compress"}
           </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 bg-slate-900 rounded-2xl p-8 border border-white/10 flex flex-col items-center justify-center min-h-[300px]">
-            <FileText className="h-20 w-20 text-orange-400 mb-4" />
-            <p className="text-xl font-bold text-white mb-2">{file.name}</p>
-            <div className="flex gap-6 text-slate-300 font-medium">
-              <p>Original: <span className="text-orange-400">{formatSize(file.size)}</span></p>
+          <div className="lg:col-span-2 bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-white/10 shadow-sm flex flex-col items-center justify-center min-h-[300px]">
+            <FileText className="h-20 w-20 text-orange-500 mb-4" />
+            <p className="text-xl font-bold text-slate-900 dark:text-white mb-2">{file.name}</p>
+            <div className="flex gap-6 text-slate-600 dark:text-slate-300 font-medium">
+              <p>Original: <span className="text-orange-500 font-bold">{formatSize(file.size)}</span></p>
               {compressedPdfBytes && (
-                <p>New Size: <span className="text-green-400">{formatSize(compressedPdfBytes.length)}</span></p>
+                <p>New Size: <span className="text-emerald-600 dark:text-green-400 font-bold">{formatSize(compressedPdfBytes.length)}</span></p>
               )}
             </div>
           </div>
 
-          <div className="bg-slate-900 rounded-2xl p-8 border border-white/10 flex flex-col h-full">
-            <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-              <Minimize2 className="h-6 w-6 text-orange-400" /> Options
+          <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-white/10 shadow-sm flex flex-col h-full">
+            <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white flex items-center gap-2">
+              <Minimize2 className="h-6 w-6 text-orange-500" /> Options
             </h2>
 
-            <p className="text-sm text-slate-400 mb-6 leading-relaxed">
+            <p className="text-sm text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
               This client-side process removes unnecessary metadata, unreferenced objects, and cleans up document structures to reduce file size.
             </p>
 
-            <div className="mt-auto pt-6 border-t border-slate-800 flex flex-col gap-4">
+            <div className="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-4">
               <button
                 onClick={handleCompress}
                 disabled={isCompressing}
-                className="w-full flex items-center justify-center gap-2 bg-slate-800 hover:bg-slate-700 text-white font-semibold py-3 px-6 rounded-xl transition-all"
+                className="w-full flex items-center justify-center gap-2 bg-slate-100 hover:bg-slate-200 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-white font-semibold py-3 px-6 rounded-xl transition-all border border-slate-300 dark:border-transparent"
               >
                 {isCompressing ? "Compressing..." : "Process PDF"}
               </button>
@@ -123,7 +125,7 @@ export default function PdfCompressorClient() {
 
               <button
                 onClick={() => { setFile(null); setCompressedPdfBytes(null); }}
-                className="w-full py-2 text-slate-400 hover:text-white transition-colors text-sm"
+                className="w-full py-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors text-sm"
               >
                 Upload a different PDF
               </button>

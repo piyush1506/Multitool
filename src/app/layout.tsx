@@ -20,8 +20,8 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://pkctechs.in",
   },
-  title: "pkctechs - Free Online Image, PDF & Web Utility Tools",
-  description: "Free online utility tools & iLovePDF alternative. Convert PDF to Word, compress images, remove backgrounds & generate QR codes. 100% private & browser-based.",
+  title: "pkctechs - Free Online Image, PDF, YouTube & Web Utility Tools",
+  description: "Free online utility tools & iLovePDF alternative. Convert PDF to Word, download YouTube videos & thumbnails, compress images, remove backgrounds. 100% private & browser-based.",
 
   keywords: [
     "ilovepdf",
@@ -30,6 +30,8 @@ export const metadata: Metadata = {
     "ilovepdf alternative",
     "ilovepdf free",
     "ilovepdf online",
+    "youtube video downloader",
+    "youtube thumbnail downloader",
     "pdf to docx",
     "docx to pdf",
     "convert pdf to word",
@@ -71,6 +73,9 @@ export const metadata: Metadata = {
   publisher: "pkctechs",
   verification: {
     google: "mF3bRg2ewXSGnBiqMMBZjf97H-fcksdcT2H-4Htuj5Y",
+    other: {
+      "msvalidate.01": "1E1F0441BAD371C012549837626A7618",
+    },
   },
   formatDetection: {
     email: false,
@@ -115,7 +120,7 @@ const jsonLd = {
       "@id": "https://pkctechs.in/#website",
       "url": "https://pkctechs.in",
       "name": "pkctechs",
-      "description": "Free Online Image, PDF & Web Utility Tools",
+      "description": "Free Online Image, PDF, YouTube & Web Utility Tools",
       "potentialAction": {
         "@type": "SearchAction",
         "target": {
@@ -129,7 +134,7 @@ const jsonLd = {
       "@type": "WebApplication",
       "name": "pkctechs Multitool",
       "url": "https://pkctechs.in",
-      "description": "Free, browser-based online utility suite featuring 19 image, PDF, document, and developer tools.",
+      "description": "Free, browser-based online utility suite featuring 25 image, PDF, YouTube, document, and developer tools.",
       "applicationCategory": "UtilityApplication",
       "operatingSystem": "All",
       "offers": {
@@ -137,31 +142,6 @@ const jsonLd = {
         "price": "0",
         "priceCurrency": "USD"
       }
-    },
-    {
-      "@type": "ItemList",
-      "name": "Tools Navigation",
-      "itemListElement": [
-        { "@type": "SiteNavigationElement", "position": 1, "name": "Image Cropper", "url": "https://pkctechs.in/tools/image-cropper" },
-        { "@type": "SiteNavigationElement", "position": 2, "name": "Image Resizer", "url": "https://pkctechs.in/tools/image-resizer" },
-        { "@type": "SiteNavigationElement", "position": 3, "name": "Image Compressor", "url": "https://pkctechs.in/tools/image-compressor" },
-        { "@type": "SiteNavigationElement", "position": 4, "name": "Image Converter", "url": "https://pkctechs.in/tools/image-converter" },
-        { "@type": "SiteNavigationElement", "position": 5, "name": "Background Remover", "url": "https://pkctechs.in/tools/background-remover" },
-        { "@type": "SiteNavigationElement", "position": 6, "name": "Image to PDF", "url": "https://pkctechs.in/tools/image-to-pdf" },
-        { "@type": "SiteNavigationElement", "position": 7, "name": "PDF to Image", "url": "https://pkctechs.in/tools/pdf-to-image" },
-        { "@type": "SiteNavigationElement", "position": 8, "name": "PDF Compressor", "url": "https://pkctechs.in/tools/pdf-compressor" },
-        { "@type": "SiteNavigationElement", "position": 9, "name": "Merge PDF", "url": "https://pkctechs.in/tools/merge-pdf" },
-        { "@type": "SiteNavigationElement", "position": 10, "name": "Split PDF", "url": "https://pkctechs.in/tools/split-pdf" },
-        { "@type": "SiteNavigationElement", "position": 11, "name": "PDF to DOCX", "url": "https://pkctechs.in/tools/pdf-to-docx" },
-        { "@type": "SiteNavigationElement", "position": 12, "name": "DOCX to PDF", "url": "https://pkctechs.in/tools/docx-to-pdf" },
-        { "@type": "SiteNavigationElement", "position": 13, "name": "Format Converter", "url": "https://pkctechs.in/tools/format-converter" },
-        { "@type": "SiteNavigationElement", "position": 14, "name": "QR Code Generator", "url": "https://pkctechs.in/tools/qr-generator" },
-        { "@type": "SiteNavigationElement", "position": 15, "name": "SVG to PNG", "url": "https://pkctechs.in/tools/svg-to-png" },
-        { "@type": "SiteNavigationElement", "position": 16, "name": "Color Picker", "url": "https://pkctechs.in/tools/color-picker" },
-        { "@type": "SiteNavigationElement", "position": 17, "name": "Password Generator", "url": "https://pkctechs.in/tools/password-generator" },
-        { "@type": "SiteNavigationElement", "position": 18, "name": "Base64 Encoder & Decoder", "url": "https://pkctechs.in/tools/base64-tool" },
-        { "@type": "SiteNavigationElement", "position": 19, "name": "JSON Formatter", "url": "https://pkctechs.in/tools/json-formatter" }
-      ]
     }
   ]
 };
@@ -175,22 +155,24 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased dark`}
+      suppressHydrationWarning
     >
-      <head>
-
-        <meta name="google-adsense-account" content="ca-pub-9516698796421486" />
-        <meta name="msvalidate.01" content="1E1F0441BAD371C012549837626A7618" />
+      <body className="min-h-full flex flex-col selection:bg-blue-500/30" suppressHydrationWarning>
         <script
-          async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9516698796421486"
-          crossOrigin="anonymous"
-        />
-        <script
+          id="root-schema-jsonld"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-      </head>
-      <body className="min-h-full flex flex-col selection:bg-blue-500/30">
+
+        {/* Google AdSense via Next.js Script */}
+        <Script
+          id="google-adsense"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9516698796421486"
+          crossOrigin="anonymous"
+          strategy="afterInteractive"
+        />
+
+        {/* Google Analytics */}
         <Script src="https://www.googletagmanager.com/gtag/js?id=G-0RSKYLDLLY" strategy="afterInteractive" />
         <Script id="google-analytics" strategy="afterInteractive">
           {`
@@ -200,6 +182,7 @@ export default function RootLayout({
             gtag('config', 'G-0RSKYLDLLY');
           `}
         </Script>
+
         <Navbar />
         <main className="flex-1">
           {children}

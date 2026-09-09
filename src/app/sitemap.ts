@@ -30,6 +30,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/tools/password-generator',
     '/tools/base64-tool',
     '/tools/json-formatter',
+    '/tools/youtube-video-downloader',
+    '/tools/youtube-thumbnail-downloader',
   ];
 
   const guideRoutes = [
@@ -40,6 +42,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const blogRoutes = [
     '/blog',
     ...Object.keys(blogPosts).map((slug) => `/blog/${slug}`),
+  ];
+
+  const complianceRoutes = [
+    '/about',
+    '/privacy',
+    '/terms',
+    '/contact',
   ];
 
   const toolEntries = toolRoutes.map((route) => ({
@@ -63,7 +72,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: route === '/blog' ? 0.85 : 0.8,
   }));
 
-  return [...toolEntries, ...guideEntries, ...blogEntries];
+  const complianceEntries = complianceRoutes.map((route) => ({
+    url: `${baseUrl}${route}`,
+    lastModified: new Date(),
+    changeFrequency: 'monthly' as const,
+    priority: 0.5,
+  }));
+
+  return [...toolEntries, ...guideEntries, ...blogEntries, ...complianceEntries];
 }
 
 

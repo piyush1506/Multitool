@@ -97,31 +97,33 @@ export default function SplitPdfClient() {
         <div
           {...getRootProps()}
           className={`border-2 border-dashed rounded-2xl p-16 text-center cursor-pointer transition-colors ${
-            isDragActive ? "border-orange-400 bg-orange-400/10" : "border-slate-700 hover:border-slate-500 hover:bg-slate-800/50"
+            isDragActive 
+              ? "border-orange-400 bg-orange-400/10" 
+              : "border-slate-300 dark:border-slate-700 hover:border-slate-400 dark:hover:border-slate-500 bg-white dark:bg-slate-900/50 hover:bg-slate-50 dark:hover:bg-slate-800/50 shadow-sm"
           }`}
         >
           <input {...getInputProps()} />
           <UploadCloud className="mx-auto h-16 w-16 text-slate-400 mb-4" />
-          <p className="text-xl font-medium text-slate-200 mb-2">
+          <p className="text-xl font-medium text-slate-700 dark:text-slate-200 mb-2">
             {isDragActive ? "Drop the PDF here" : "Drag & drop a PDF, or click to select"}
           </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div className="lg:col-span-2 bg-slate-900 rounded-2xl p-8 border border-white/10 flex flex-col items-center justify-center min-h-[300px]">
-            <FileText className="h-20 w-20 text-orange-400 mb-4" />
-            <p className="text-xl font-bold text-white mb-1">{file.name}</p>
-            <p className="text-sm text-slate-400">Total Pages: {pageCount}</p>
+          <div className="lg:col-span-2 bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-white/10 shadow-sm flex flex-col items-center justify-center min-h-[300px]">
+            <FileText className="h-20 w-20 text-orange-500 mb-4" />
+            <p className="text-xl font-bold text-slate-900 dark:text-white mb-1">{file.name}</p>
+            <p className="text-sm text-slate-500 dark:text-slate-400">Total Pages: {pageCount}</p>
           </div>
 
-          <div className="bg-slate-900 rounded-2xl p-8 border border-white/10 flex flex-col h-full">
-            <h2 className="text-2xl font-bold mb-6 text-white flex items-center gap-2">
-              <Scissors className="h-6 w-6 text-orange-400" /> Split Options
+          <div className="bg-white dark:bg-slate-900 rounded-2xl p-8 border border-slate-200 dark:border-white/10 shadow-sm flex flex-col h-full">
+            <h2 className="text-2xl font-bold mb-6 text-slate-900 dark:text-white flex items-center gap-2">
+              <Scissors className="h-6 w-6 text-orange-500" /> Split Options
             </h2>
 
             <div className="flex flex-col gap-6 flex-1">
               <div>
-                <label className="block text-sm font-medium text-slate-300 mb-2">
+                <label className="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2">
                   Page Selection/Range
                 </label>
                 <input
@@ -129,14 +131,14 @@ export default function SplitPdfClient() {
                   value={splitRange}
                   onChange={(e) => setSplitRange(e.target.value)}
                   placeholder="e.g. 1-3, 5, 7-9"
-                  className="w-full bg-slate-800 border border-slate-700 text-white rounded-xl p-3 text-sm focus:outline-none focus:border-orange-500"
+                  className="w-full bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 text-slate-900 dark:text-white rounded-xl p-3 text-sm focus:outline-none focus:border-orange-500"
                 />
-                <p className="text-xs text-slate-400 mt-2">
+                <p className="text-xs text-slate-500 dark:text-slate-400 mt-2">
                   Specify page numbers or ranges separated by commas (e.g. 1-3, 5).
                 </p>
               </div>
 
-              <div className="mt-auto pt-6 border-t border-slate-800 flex flex-col gap-4">
+              <div className="mt-auto pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-col gap-4">
                 <button
                   onClick={handleSplit}
                   disabled={isSplitting}
@@ -148,7 +150,7 @@ export default function SplitPdfClient() {
 
                 <button
                   onClick={() => { setFile(null); setPageCount(0); }}
-                  className="w-full py-2 text-slate-400 hover:text-white transition-colors text-sm"
+                  className="w-full py-2 text-slate-500 hover:text-slate-900 dark:text-slate-400 dark:hover:text-white transition-colors text-sm"
                 >
                   Upload a different PDF
                 </button>
